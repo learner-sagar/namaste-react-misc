@@ -17,7 +17,7 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
-  background: navy;
+  background: rgb(30, 146, 193);
 }
 
 .logo {
@@ -101,4 +101,83 @@ img {
   .restaurant-container {
     justify-content: flex-start;
   }
+}
+
+.filter-btn {
+  border: transparent;
+  padding: 0.7rem 1rem;
+  background: hsl(45, 47%, 20%);
+  color: #fff;
+}
+.filter-btn:hover {
+  background: hsl(45, 47%, 50%);
+}
+
+.shimmer-btn {
+  border: transparent;
+  padding: 0.7rem 1rem;
+  background: #f0f0f0;
+  color: #f0f0f0;
+  width: 10rem;
+  height: 2.8rem;
+}
+
+.shimmer-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shimmer-cards {
+  width: 20rem;
+  height: 28rem;
+  margin: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  box-shadow: 0 0.1rem 2rem hsl(0, 0%, 80%);
+  background-color: #f0f0f0;
+}
+
+@media screen and (min-width: 578px) {
+  .shimmer-card-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .shimmer-card-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1170px) {
+  .shimmer-card-container {
+    justify-content: flex-start;
+  }
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-control {
+  border: 1px solid skyblue;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 0.4rem 5rem grey;
+}
+.search-btn {
+  margin-left: 0.5rem;
+}
+
+.form-control:active {
+  border: 1px solid rgb(19, 167, 226);
 }
