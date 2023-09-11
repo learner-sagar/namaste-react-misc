@@ -39,7 +39,12 @@ img {
 }
 
 .nav-links li {
+  text-decoration: none;
   padding: 0.7rem;
+}
+.nav-items li a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .restaurant-container {
@@ -176,8 +181,4 @@ img {
 }
 .search-btn {
   margin-left: 0.5rem;
-}
-
-.form-control:active {
-  border: 1px solid rgb(19, 167, 226);
 }
