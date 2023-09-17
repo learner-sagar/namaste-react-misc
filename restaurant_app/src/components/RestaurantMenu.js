@@ -1,32 +1,10 @@
-import { useEffect, useState } from "react";
-import { restaurants } from "../utils/mockData";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
-  useEffect(() => {
-    fetchMenu();
-  });
-
-  const fetchMenu = async () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        const { name, cuisines, costForTwo } = restaurants.find(
-          (restaurant) => {
-            return restaurant.info.id == resId;
-          }
-        ).info;
-        setResInfo({
-          name,
-          cuisines,
-          costForTwo,
-        });
-        resolve();
-      }, 1000);
-    });
-  };
+  const resInfo = useRestaurantMenu(resId);
 
   return resInfo === null ? (
     <Shimmer />
