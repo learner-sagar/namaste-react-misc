@@ -52,18 +52,18 @@ const Body = () => {
   }
 
   return (
-    <div className="body">
-      <div className="filter-container">
-        <div className="search">
+    <div className="body mx-20">
+      <div className="flex items-center justify-between my-4">
+        <div className="search flex">
           <input
-            className="form-control"
+            className="border border-solid border-blue-100 px-2 rounded-bl-md rounded-tl-md"
             type="search"
             placeholder="Search"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
           <button
-            className="form-control search-btn"
+            className=" bg-blue-300 hover:bg-blue-100 px-2 py-1 rounded-br-md rounded-tr-md"
             type="button"
             onClick={searchRestaurants}
           >
@@ -71,12 +71,15 @@ const Body = () => {
           </button>
         </div>
         <div className="filter">
-          <button className="filter-btn" onClick={filterTopRated}>
+          <button
+            className="bg-blue-300 hover:bg-blue-100 px-2 py-1 rounded-md"
+            onClick={filterTopRated}
+          >
             Top Rated Restaurants
           </button>
         </div>
       </div>
-      <div className="restaurant-container">
+      <div className="grid sm:grid-cols-4 md:grid-cols-4 lg:grid-flow-col-4 h-auto gap-20 mt-16">
         {restaurantList.map((restaurant) => (
           <Link
             to={`restaurant/${restaurant?.info?.id}`}
