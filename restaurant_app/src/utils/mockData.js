@@ -51,6 +51,7 @@ export const restaurants = [
         nextCloseTime: "2023-09-03 23:59:00",
         opened: true,
       },
+      promoted: true,
       badges: {},
       isOpen: true,
       type: "F",

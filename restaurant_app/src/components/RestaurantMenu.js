@@ -9,15 +9,15 @@ const RestaurantMenu = () => {
   return resInfo === null ? (
     <Shimmer />
   ) : (
-    <div className="menu">
-      <h1>{resInfo.name}</h1>
-      <h2>Menu</h2>
+    <div className="text-center">
+      <h1 className="font-bold text-2xl">{resInfo.name}</h1>
+      <h3 className="font-bold text-xl">Menu</h3>
       <ul>
         {resInfo.cuisines.map((cuisine, index) => (
           <li key={index}>{cuisine}</li>
         ))}
       </ul>
-      <h3>{resInfo.costForTwo}</h3>
+      <h3 className="font-bold">{resInfo.costForTwo}</h3>
     </div>
   );
 };
