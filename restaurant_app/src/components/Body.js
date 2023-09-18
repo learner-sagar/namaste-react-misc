@@ -4,10 +4,13 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import withPromotedLabel from "./withPromotedLabel";
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
+
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   useEffect(() => {
     fetchMockData();
@@ -52,7 +55,7 @@ const Body = () => {
   }
 
   return (
-    <div className="body mx-20">
+    <div className="mx-20">
       <div className="flex items-center justify-between my-4">
         <div className="search flex">
           <input
@@ -70,7 +73,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="filter">
+        <div>
           <button
             className="bg-blue-300 hover:bg-blue-100 px-2 py-1 rounded-md"
             onClick={filterTopRated}
@@ -85,10 +88,17 @@ const Body = () => {
             to={`restaurant/${restaurant?.info?.id}`}
             key={restaurant?.info?.id}
           >
-            <RestaurantCard
-              restaurant={restaurant?.info}
-              link={restaurant?.cta?.link}
-            />
+            {restaurant.info.promoted ? (
+              <RestaurantCardPromoted
+                restaurant={restaurant?.info}
+                link={restaurant?.cta?.link}
+              />
+            ) : (
+              <RestaurantCard
+                restaurant={restaurant?.info}
+                link={restaurant?.cta?.link}
+              />
+            )}
           </Link>
         ))}
       </div>
