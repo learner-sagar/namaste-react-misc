@@ -10,6 +10,7 @@ const useRestaurantMenu = (resId) => {
   const fetchMenu = async () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
+        console.log(restaurants);
         const { name, cuisines, costForTwo } = restaurants.find(
           (restaurant) => {
             return restaurant.info.id == resId;
