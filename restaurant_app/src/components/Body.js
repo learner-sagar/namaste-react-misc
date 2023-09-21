@@ -61,6 +61,7 @@ const Body = () => {
           <input
             className="border border-solid border-blue-100 px-2 rounded-bl-md rounded-tl-md"
             type="search"
+            data-testid="search-input"
             placeholder="Search"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
@@ -89,15 +90,9 @@ const Body = () => {
             key={restaurant?.info?.id}
           >
             {restaurant.info.promoted ? (
-              <RestaurantCardPromoted
-                restaurant={restaurant?.info}
-                link={restaurant?.cta?.link}
-              />
+              <RestaurantCardPromoted restaurant={restaurant?.info} />
             ) : (
-              <RestaurantCard
-                restaurant={restaurant?.info}
-                link={restaurant?.cta?.link}
-              />
+              <RestaurantCard restaurant={restaurant?.info} />
             )}
           </Link>
         ))}
